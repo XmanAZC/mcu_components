@@ -3,7 +3,7 @@
 
 #include <rtthread.h>
 #include <ipc/completion.h>
-#include <drv_simple_uart_v2.h>
+#include <drv_simple_uart.h>
 
 #define XLINK_SOF 0xA5u
 #define XLINK_MAX_PAYLOAD 250u
