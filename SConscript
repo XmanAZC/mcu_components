@@ -36,6 +36,12 @@ if GetDepend('USING_PROTOBUF'):
 if GetDepend('USING_UTHASH'):
     path += ['uthash/src/']
 
+if GetDepend('USING_XLINK'):
+    path += ['xlink/','../xlink_generator/']
+    generator_exec_path = os.path.join(cwd, 'xlink/tools/xlink_generator.py')
+    cmd_str = 'python {} -i ../xlink_messagedef/project.json -o ../xlink_generator'.format(generator_exec_path)
+    os.system(cmd_str)
+
 group = DefineGroup('mcu_components', src, depend = [''], CPPPATH = path)
 
 Return('group')
